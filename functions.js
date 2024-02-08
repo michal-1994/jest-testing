@@ -1,5 +1,14 @@
 const axios = require('axios');
 
+// beforeEach(() => initDatabase());
+// beforeEach(() => closeDatabase());
+
+beforeAll(() => initDatabase());
+afterAll(() => closeDatabase());
+
+const initDatabase = () => console.log('Database Initialized...');
+const closeDatabase = () => console.log('Database Closed...');
+
 const functions = {
 	add: (num1, num2) => num1 + num2,
 	isNull: () => null,
