@@ -22,4 +22,19 @@ const validateInput = (text, notEmpty, isNumber) => {
 	return true;
 };
 
-module.exports = { generateText, createElement, validateInput };
+const checkAndGenerate = (name, age) => {
+	if (
+		!validateInput(name, true, false) ||
+		!validateInput(name, false, true)
+	) {
+		return;
+	}
+	return generateText(name, age);
+};
+
+module.exports = {
+	generateText,
+	createElement,
+	validateInput,
+	checkAndGenerate,
+};
